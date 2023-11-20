@@ -41,7 +41,9 @@ int	ft_printf(const char *str, ...)
     {
         if (str[i] == '%')
         {
-            cnt += ft_tprint(ptr, str[++i]);
+            if (str[i] == '%' && str[i + 1] == '\0')
+                return cnt;
+            cnt += ft_tprint(ptr, str[i]);
         }
         else
            cnt += ft_putchar(str[i]);
@@ -52,12 +54,6 @@ int	ft_printf(const char *str, ...)
 }
 int main()
 {
-    //int s = 42;
-    // int x = ft_printf("%s\n","ahmed");
-    ft_printf("%s\n","ahmed");
-    // int z = printf("%x\n",1337);
-    printf("%s\n","lina");
-    // printf("%d\n");
-    // printf("%p\n",s);
-    // ft_printf("%d\n");
+
+    ft_printf("%");
 }
